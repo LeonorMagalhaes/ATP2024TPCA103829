@@ -1,35 +1,67 @@
-# Introdução:
-Este README descreve o funcionamento do jogo proposto, implementado com várias funções em Python.
-Abaixo segue um resumo das principais funções implementadas no código para o desafio proposto:
+## Introdução:
+# Descrição do Sistema de Gerenciamento de Cinema
+Este programa é uma aplicação simples para a gestão de cinemas, permitindo o controle de salas, filmes e vendas de bilhetes. O objetivo é proporcionar uma interface funcional para gerir exibições e lugares de forma eficiente.
 
-# Funções principais:
-*exibirMenu:* Mostra as opções disponíveis no programa, como criar uma lista ou encerrar a aplicação.
+## Estrutura Principal
+# Salas de Cinema
+Cada sala é representada como uma estrutura contendo:
 
-*gerarListaAleatoria:* Cria uma lista contendo números aleatórios com o tamanho definido pelo usuário.
+*Capacidade máxima:* Total de lugares disponíveis na sala.
+*Lista de lugares vendidos:* Inicialmente vazia, é atualizada com os lugares ocupados.
+*Filme exibido:* Nome do filme associado à sala.
 
-*criarListaManual:* Permite ao usuário adicionar elementos manualmente à lista, inserindo números por meio de inputs.
+## Funcionalidades Principais
+# MostrarMenu
+Apresenta um menu interativo com as opções disponíveis, como listar filmes, comprar bilhetes ou adicionar salas.
 
-# Funções de cálculo:
+# reset
+Reinicia o sistema, limpando todas as salas e filmes já registados.
 
-*calcularSoma:* Retorna a soma dos elementos da lista.
-*calcularMedia:* Calcula e exibe a média dos valores presentes na lista.
-*encontrarMaior:* Identifica e retorna o maior número da lista.
-*encontrarMenor:* Localiza o menor valor da lista.
+# existesala(cinema, sala)
+Verifica se já existe uma sala com um filme específico em exibição, impedindo duplicidade.
 
-# Análise de ordenação:
+# inserirsala(cinema, sala)
+Adiciona uma nova sala ao cinema, garantindo que o filme ainda não está em exibição.
 
-*verificarCrescente:* Avalia se a lista está organizada em ordem crescente.
-*verificarDecrescente:* Confirma se os elementos estão em ordem decrescente.
-*buscarElemento:* Permite procurar um valor específico na lista e retorna sua posição, caso seja encontrado.
+# listar(cinema)
+Exibe uma lista de todos os filmes em exibição, acompanhados das respectivas capacidades das salas.
 
-*encerrarPrograma:* Finaliza a execução do programa quando o usuário escolhe a opção correspondente no menu.
+# disponivel(cinema, filmecin, lugar)
+Confirma se um determinado lugare está disponível para venda numa sala específica.
 
-#  Estrutura principal (menuPrincipal):
-A função principal, menuPrincipal, utiliza um loop que apresenta continuamente o menu ao usuário e processa suas escolhas. Com base na seleção:
+# venderBilh(cinema, filmecin, lugar)
+Processa a venda de bilhetes, verificando a disponibilidade de lugares e atualizando o registro da sala.
 
-A criação de listas pode ser feita de forma manual ou automática.
-Operações como soma, média, maior ou menor valor são executadas usando a lista atual.
-Caso o usuário deseje verificar a ordenação da lista, as funções apropriadas são chamadas.
-A busca por elementos específicos também pode ser realizada.
-Escolher a opção "Sair" encerra o loop, exibindo uma mensagem antes de finalizar o programa.
-Essa organização garante que todas as funcionalidades sejam acessíveis de maneira clara e intuitiva.
+# listardisponibilidades(cinema)
+Exibe o número de lugares ainda disponíveis para cada filme em exibição.
+
+# cria_sala(cinema, filmecin, lugares)
+Cria uma nova sala para exibição de um filme, definindo sua capacidade máxima de assentos.
+
+# sair
+Finaliza o programa com uma mensagem de despedida.
+
+## Fluxo de Operação
+A função principal *Menu* consiste em gerir as interações do utilizador, sendo apenas deixado de exibir quando o utilizador selecione a opção 'Sair'.
+
+*Menu* permite ações como:
+- Verificar a lista de filmes e suas capacidades.
+- Criar novas salas ou filmes.
+- Comprar bilhetes para assentos específicos.
+- Consultar a disponibilidade de assentos.
+- Inclui validações para evitar erros, como criar duas salas para o mesmo filme ou vender assentos já ocupados.
+
+# Conslusão/Finalidade
+Este programa é ideal para simular uma aplicação de gestão básica de um cinema, proporcionando ao utilizador um controle completo sobre as operações relacionadas às salas, filmes e vendas de bilhetes.
+
+
+
+
+
+
+
+
+
+
+
+O ChatGPT pode cometer erros. Consider
