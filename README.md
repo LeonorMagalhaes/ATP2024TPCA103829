@@ -1,26 +1,39 @@
-# Resumo #
+Para este Tcp , o desafio proposto consiste em desenvolver um jogo interativo em Python chamado "Adivinha o Número", que possui dois *modos de funcionamento*:
 
-Neste trabalho de casa, foram realizadas duas tarefas distintas relativas a práticas de programação visual. 
-Uma delas consistia em solucionar os 10 Níveis do jogo 'Maze', e o outro em solucionar os 10 níveis do jogo 'Turtle', desenhando uma casa, uma árvore e um Sol.  
+# Modos de funcionamneto do Jogo: 
+*Modo Computador*: O jogador tenta descobrir um número que foi gerado aleatoriamente pelo programa.
+*Modo Jogador:* O jogador pensa em um número, e o computador tenta adivinhar utilizando um método de busca otimizado.
+Estrutura do Menu
 
-# Maze #
-O primeiro corresponde ao Nível 10 do jogo 'Maze'. Neste jogo, é pretendido que o utilizador solucione um labirinto, 
-utilizando estruturas de código. 
-Para isto, utilizei estruturas tais como estruturas condicionais e estruturas de repetição, indicando o que é que o peão teria que fazer caso o caminho virasse para a esquerda, para a direita, para a frente, 
-No entanto, foi permitido apenas um número limitado de blocos, daí surgundo a necessidade de ter utilizado blocos e estruturas condicionais e de repetição. ('repeat until do', 'if', 'else, 'elif')
+# Menu
+Ao iniciar o programa, é exibido um menu com três opções principais:
 
- # Turtle #
-O jogo Turtle, do Blockly Games, ensina conceitos de programação gráfica com foco em projetar desenhos.
-O objetivo principal é usar blocos de código para mover o cursor ('pen') e criar imagens ou padrões predefinidos, através de medidas e linhas bem definidas. 
-Após ter completado os restantes níveis para chegar A`composição final pedida, 
-construí o sol (uma circunferência amarela com linhas espaçadas entre si), fazendo repetir uma linha de um certo tamanho repetir-se 360 vezes de 1 grau em 1 grau, com os blocos `repeat 360 times`
-Para a árvores, construí um retângulo castanho e três círculos verdes com diferentes coordenadas de centro no espaço, utiliazndo os blocos 'repeat 4 times' movendo o cursor para frente e virando 90 graus ('turn 90º') criando os lados.
-Para a construção da casa, contruí um quadrado vermelho, com um triângulo em cima, constiruindo as quatro paredes e o telhado da casa, respetivamente. 
+1: Jogar no Modo Computador.
+2: Jogar no Modo Jogador.
+0: Encerrar o programa.
+A opção desejada é selecionada pelo jogador através de um comando input, sendo armazenada na variável correspondente.
 
-Tudo isto foi produzido utilizando, tal como no jogo 'Maze', estruturas condicionais e de repetição, de forma a otimizar os processos de programação visual.
+# Funcionamento por Opção
+*Opção 0*: Sair
+Quando o jogador escolhe esta opção, o programa exibe uma mensagem de despedida e finaliza a execução.
 
-NOTA:
-A **estrutura repetitiva** (loops) é usada para formar formas geométricas (quadrado, círculo).
-- **Movimentação controlada** através de comandos de `turn` e `move forward` para posicionar a tartaruga corretamente para o próximo desenho.
-- **Uso de ângulos** e tamanhos ajustados para desenhar as formas com precisão, especialmente no telhado da casa e na copa da arvore.
+*Opção 1*: Modo Computador
+Neste modo:
 
+O computador gera um número aleatório entre 0 e 100 utilizando a função random.randint.
+O jogador faz palpites sucessivos, inserindo números pelo teclado.
+O programa informa se o palpite é maior ou menor que o número gerado, ajustando a busca até que o jogador acerte.
+Um contador registra a quantidade de tentativas até o acerto.
+*Opção 2*: Modo Jogador
+Neste modo:
+
+O jogador pensa em um número secreto entre 0 e 100, e o computador tenta adivinhá-lo.
+Utilizando a busca binária, o computador faz palpites com base na média do intervalo atual.
+O jogador responde com "Acertou", "Maior" ou "Menor", indicando se o palpite está correto ou se o computador precisa ajustar o intervalo.
+O processo se repete até que o computador identifique o número, mostrando a quantidade de tentativas realizadas.
+Estrutura de Repetição
+Em ambos os modos, um loop principal mantém o jogo ativo até que a condição de acerto seja atingida.
+
+# Contador de Tentativas
+Cada tentativa é contabilizada, e o total é exibido ao final do jogo, incentivando o jogador a buscar soluções mais eficientes.
+Esta estrutura combina lógica de programação com interatividade, promovendo aprendizado e diversão para quem desenvolve e joga.
