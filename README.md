@@ -1,52 +1,35 @@
 # Introdução:
-Este README descreve o funcionamento do jogo proposto, baseado em fósforos, implementado com várias funções em Python.
+Este README descreve o funcionamento do jogo proposto, implementado com várias funções em Python.
 Abaixo segue um resumo das principais funções implementadas no código para o desafio proposto:
 
- # 1. Função MostrarMenu()
-Exibe um menu principal com três opções:
-*Modo Normal:* O jogador joga primeiro, e o computador sempre vence seguindo uma estratégia específica.
-*Modo Computador:* O computador joga primeiro, sem uma estratégia otimizada.
-*Sair:* Encerra o jogo.
+# Funções principais:
+*exibirMenu:* Mostra as opções disponíveis no programa, como criar uma lista ou encerrar a aplicação.
 
-# 2. Função sair()
-Imprime uma mensagem de despedida e encerra o programa.
+*gerarListaAleatoria:* Cria uma lista contendo números aleatórios com o tamanho definido pelo usuário.
 
-# 3. Função modonormal()
-Este é o modo onde o jogador inicia, mas o computador usa uma estratégia para garantir a vitória:
+*criarListaManual:* Permite ao usuário adicionar elementos manualmente à lista, inserindo números por meio de inputs.
 
-O jogo começa com 21 fósforos.
-O jogador escolhe entre 1 e 4 fósforos para remover. Qualquer entradas inválida ou não suportada é rejeitada.
-Se o número de fósforos restantes for 'zero' após a jogada do jogador, o jogador perde.
-O computador então faz uma jogada estratégica, garantindo que a soma dos fósforos removidos por ambos em uma rodada seja sempre 5.
-O jogo prossegue até restar apenas um fósforo, garantindo a vitória do computador.
+# Funções de cálculo:
 
-# 4. Função modocomputador()
-Neste modo, o computador joga primeiro:
+*calcularSoma:* Retorna a soma dos elementos da lista.
+*calcularMedia:* Calcula e exibe a média dos valores presentes na lista.
+*encontrarMaior:* Identifica e retorna o maior número da lista.
+*encontrarMenor:* Localiza o menor valor da lista.
 
-O computador remove de 1 a 4 fósforos aleatoriamente usando 'random.randint()'.
-Após a jogada, o número de fósforos restantes é atualizado.
-O jogador faz sua jogada com as mesmas regras do modo anterior.
-O jogo termina quando alguém remove o último fósforo, definindo o perdedor.
+# Análise de ordenação:
 
-# 5. Função menu()
-Gere o fluxo do jogo:
+*verificarCrescente:* Avalia se a lista está organizada em ordem crescente.
+*verificarDecrescente:* Confirma se os elementos estão em ordem decrescente.
+*buscarElemento:* Permite procurar um valor específico na lista e retorna sua posição, caso seja encontrado.
 
-Exibe o menu inicial com *MostrarMenu()*.
-Permite ao jogador escolher uma das opções:
+*encerrarPrograma:* Finaliza a execução do programa quando o usuário escolhe a opção correspondente no menu.
 
-1: Chama modonormal().
-2: Chama modocomputador().
-0: Chama sair().
+#  Estrutura principal (menuPrincipal):
+A função principal, menuPrincipal, utiliza um loop que apresenta continuamente o menu ao usuário e processa suas escolhas. Com base na seleção:
 
-Para além disto, valida a entrada do jogador para evitar valores inválidos.
-
-
-
-
-
-
-
-
-
-
-
+A criação de listas pode ser feita de forma manual ou automática.
+Operações como soma, média, maior ou menor valor são executadas usando a lista atual.
+Caso o usuário deseje verificar a ordenação da lista, as funções apropriadas são chamadas.
+A busca por elementos específicos também pode ser realizada.
+Escolher a opção "Sair" encerra o loop, exibindo uma mensagem antes de finalizar o programa.
+Essa organização garante que todas as funcionalidades sejam acessíveis de maneira clara e intuitiva.
