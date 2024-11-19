@@ -1,39 +1,52 @@
-Para este Tcp , o desafio proposto consiste em desenvolver um jogo interativo em Python chamado "Adivinha o Número", que possui dois *modos de funcionamento*:
+# Introdução:
+Este README descreve o funcionamento do jogo proposto, baseado em fósforos, implementado com várias funções em Python.
+Abaixo segue um resumo das principais funções implementadas no código para o desafio proposto:
 
-# Modos de funcionamneto do Jogo: 
-*Modo Computador*: O jogador tenta descobrir um número que foi gerado aleatoriamente pelo programa.
-*Modo Jogador:* O jogador pensa em um número, e o computador tenta adivinhar utilizando um método de busca otimizado.
-Estrutura do Menu
+ # 1. Função MostrarMenu()
+Exibe um menu principal com três opções:
+*Modo Normal:* O jogador joga primeiro, e o computador sempre vence seguindo uma estratégia específica.
+*Modo Computador:* O computador joga primeiro, sem uma estratégia otimizada.
+*Sair:* Encerra o jogo.
 
-# Menu
-Ao iniciar o programa, é exibido um menu com três opções principais:
+# 2. Função sair()
+Imprime uma mensagem de despedida e encerra o programa.
 
-1: Jogar no Modo Computador.
-2: Jogar no Modo Jogador.
-0: Encerrar o programa.
-A opção desejada é selecionada pelo jogador através de um comando input, sendo armazenada na variável correspondente.
+# 3. Função modonormal()
+Este é o modo onde o jogador inicia, mas o computador usa uma estratégia para garantir a vitória:
 
-# Funcionamento por Opção
-*Opção 0*: Sair
-Quando o jogador escolhe esta opção, o programa exibe uma mensagem de despedida e finaliza a execução.
+O jogo começa com 21 fósforos.
+O jogador escolhe entre 1 e 4 fósforos para remover. Qualquer entradas inválida ou não suportada é rejeitada.
+Se o número de fósforos restantes for 'zero' após a jogada do jogador, o jogador perde.
+O computador então faz uma jogada estratégica, garantindo que a soma dos fósforos removidos por ambos em uma rodada seja sempre 5.
+O jogo prossegue até restar apenas um fósforo, garantindo a vitória do computador.
 
-*Opção 1*: Modo Computador
-Neste modo:
+# 4. Função modocomputador()
+Neste modo, o computador joga primeiro:
 
-O computador gera um número aleatório entre 0 e 100 utilizando a função random.randint.
-O jogador faz palpites sucessivos, inserindo números pelo teclado.
-O programa informa se o palpite é maior ou menor que o número gerado, ajustando a busca até que o jogador acerte.
-Um contador registra a quantidade de tentativas até o acerto.
-*Opção 2*: Modo Jogador
-Neste modo:
+O computador remove de 1 a 4 fósforos aleatoriamente usando 'random.randint()'.
+Após a jogada, o número de fósforos restantes é atualizado.
+O jogador faz sua jogada com as mesmas regras do modo anterior.
+O jogo termina quando alguém remove o último fósforo, definindo o perdedor.
 
-O jogador pensa em um número secreto entre 0 e 100, e o computador tenta adivinhá-lo.
-Utilizando a busca binária, o computador faz palpites com base na média do intervalo atual.
-O jogador responde com "Acertou", "Maior" ou "Menor", indicando se o palpite está correto ou se o computador precisa ajustar o intervalo.
-O processo se repete até que o computador identifique o número, mostrando a quantidade de tentativas realizadas.
-Estrutura de Repetição
-Em ambos os modos, um loop principal mantém o jogo ativo até que a condição de acerto seja atingida.
+# 5. Função menu()
+Gere o fluxo do jogo:
 
-# Contador de Tentativas
-Cada tentativa é contabilizada, e o total é exibido ao final do jogo, incentivando o jogador a buscar soluções mais eficientes.
-Esta estrutura combina lógica de programação com interatividade, promovendo aprendizado e diversão para quem desenvolve e joga.
+Exibe o menu inicial com *MostrarMenu()*.
+Permite ao jogador escolher uma das opções:
+
+1: Chama modonormal().
+2: Chama modocomputador().
+0: Chama sair().
+
+Para além disto, valida a entrada do jogador para evitar valores inválidos.
+
+
+
+
+
+
+
+
+
+
+
